@@ -23,4 +23,6 @@ SECRET=cheese
 
 - session auth built in, the user model is in **models/auth** and the auth routes are in **controllers/auth**
 
+- If you want the connect.session() warning to go away you can configure a mongo session store using the following library => https://www.npmjs.com/package/connect-mongo
+
 MAKE SURE TO JOIN THE SLACK AND DISCORD COMMUNITIES AT DEVNURSERY.COM
