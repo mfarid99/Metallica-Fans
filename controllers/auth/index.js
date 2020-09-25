@@ -36,10 +36,9 @@ router.get("/login", (req, res) => {
 
 // LOGIN POST REQUEST
 router.post("/login", async (req, res) => {
-  console.log("Hello");
   // FIND USER
   const user = await User.find({ username: req.body.username });
-  console.log(user);
+
   //CHECK IF USER WAS FOUND
   if (user.length > 0) {
     // COMPARE PASSWORD
