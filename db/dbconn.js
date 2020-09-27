@@ -14,6 +14,7 @@ const dbconfig = { useUnifiedTopology: true, useNewUrlParser: true };
 // DATABASE CONNECTION
 //////////////////////////////////////
 mongoose.connect(`${MONGODB_URI}${DB_NAME}`, dbconfig);
+mongoose.set("useCreateIndex", true);
 
 ///////////////////////////////////////
 // DATABASE EVENTS

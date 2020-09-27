@@ -22,6 +22,7 @@ const testRouter = require("./controllers/test");
 
 // OTHER IMPORTS
 const session = require("express-session");
+const MongoStore = require("connect-mongo")(session);
 const methodOverride = require("method-override");
 const morgan = require("morgan");
 
@@ -40,9 +41,9 @@ app.engine("jsx", require("express-react-views").createEngine());
 app.use(
   session({
     secret: SECRET,
-    resave: false,
-    saveUninitialized: true,
-    cookie: { secure: process.env.NODE_ENV === "production" },
+    saveUninitialized: false, // don't create session until something stored
+    resave: false, //don't save session if unmodified
+    store: new MongoStore({ mongooseConnection: mongoose.connection }),
   })
 );
 app.use(express.static("public"));
