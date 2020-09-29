@@ -23,6 +23,26 @@ router.get("/", auth, async (req, res) => {
     console.log(err);
   }
 })
+
+//New Route
+
+router.get("/new", auth, async (req, res) => {
+  res.render("notes/signup.jsx")
+})
+
+//Create Route
+router.post("/", auth, async (req, res) => {
+  req.body.username = req.session.username
+  const newNote = await Note.create(req.body)
+  res.redirect("/notes/")
+});
+
+//Delete Route
+
+router.delete("/:id", auth, async (req, res)=> {
+  await Note.findByIdAndDelete(req.params.id)
+  res.redirect("/notes/")
+})
 //TEST ROUTE TO SHOW HOW AUTH MIDDLEWARE WORKS
 
 router.get("/", auth, (req, res) => {
