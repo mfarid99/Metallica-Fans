@@ -3,7 +3,7 @@ const Layout = require("../layout.jsx");
 
 class Index extends React.Component {
   render() {
-    const {notes} = this.props
+
     return (
       <Layout title="New Note">
         

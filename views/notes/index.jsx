@@ -17,6 +17,9 @@ class Index extends React.Component {
         <form action = {`/notes/${note._id}?_method=DELETE`} method = "POST">
           <input type = "submit" value = "delete"/>
         </form>
+        <form action = {`/notes/edit/${note._id}`} method = "GET">
+          <input type = "submit" value = "Edit"/>
+        </form>
         </div>
         
         ))}

@@ -27,21 +27,65 @@ router.get("/", auth, async (req, res) => {
 //New Route
 
 router.get("/new", auth, async (req, res) => {
-  res.render("notes/signup.jsx")
+  try {
+    res.render("notes/new.jsx")
+
+  }
+  catch(error) {
+    console.log(error)
+  }
 })
 
 //Create Route
 router.post("/", auth, async (req, res) => {
-  req.body.username = req.session.username
-  const newNote = await Note.create(req.body)
-  res.redirect("/notes/")
+  try {
+    req.body.username = req.session.username;
+    const newNote = await Note.create(req.body);
+    res.redirect("/notes/");
+  }
+  catch(error) {
+    console.log(error)
+  }
+  
 });
 
 //Delete Route
 
 router.delete("/:id", auth, async (req, res)=> {
-  await Note.findByIdAndDelete(req.params.id)
-  res.redirect("/notes/")
+  try {
+    await Note.findByIdAndDelete(req.params.id)
+    res.redirect("/notes/")
+
+  }
+  catch(error) {
+    console.log(error)
+  }
+})
+
+//Edit Route
+router.get("/edit/:id", auth, async (req, res) => {
+  try {
+    const note = await Note.findById(req.params.id)
+    res.render("notes/edit.jsx", { note })
+  }
+  catch(error) {
+    console.log(error)
+  }
+ 
+})
+
+
+//Update Route
+router.put("/edit/:id", auth, async (req, res) => {
+  try {
+    req.body.username = req.session.username
+    await Note.findByIdAndUpdate(req.params.id, req.body)
+    res.redirect("/notes/")
+  }
+  catch(error) {
+    console.log(error)
+  } 
+  
 })
 //TEST ROUTE TO SHOW HOW AUTH MIDDLEWARE WORKS
 
