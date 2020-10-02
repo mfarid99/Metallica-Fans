@@ -9,7 +9,11 @@ const { Schema, model } = require("mongoose");
 
 const noteSchema = new Schema({
   username: { type: String, required: true},
-  note: String,
+  name: String,
+  date: String,
+  location: String,
+  image: String, 
+  desc: String,
 }, {timestamps: true});
 
 ////////////////////////////////////

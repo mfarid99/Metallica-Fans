@@ -24,6 +24,22 @@ router.get("/", auth, async (req, res) => {
   }
 })
 
+
+
+
+
+//Experimental
+
+// router.get("notes/index.jsx", auth, async (req, res) => {
+//   try {
+//     res.render("/")
+
+//   }
+//   catch(error) {
+//     console.log(error)
+//   }
+// })
+
 //New Route
 
 router.get("/new", auth, async (req, res) => {
@@ -87,6 +103,8 @@ router.put("/edit/:id", auth, async (req, res) => {
   } 
   
 })
+
+
 //TEST ROUTE TO SHOW HOW AUTH MIDDLEWARE WORKS
 
 router.get("/", auth, (req, res) => {
