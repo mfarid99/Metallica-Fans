@@ -1,28 +1,10 @@
-# Mongo - Express - Express React Views Template
 
-## USING THIS TEMPLATE:
+This project uses Mongo/Express/React to creat an APP where Metallica fans can upload their best live show photos and comment on their experiences attending a Metallica concert. The user can add his/her name, date & location of the concert, upload a photo and comment on the concert itself. When they are done, the data will display on the main page. The user can also edit the information or delete it all together. When the app is opened, a new user is prompted to sign up and after signing up, user is prompted to log in to gain full access of the app. 
 
-- Make sure to run npm install
+This is a full stack application that uses Node.js, Mongoose, Express/React. It adheres to MVC file structure including Models, Views and Controllers. 
 
-- Environment Files are in a .env, create with your env variables. Here are some needed variables for this template to get you started. You can rename template.env into .env to get started.
+It uses 1 model with all 7 RESTful routes and full CRUD. 
 
-```
-PORT=5000
-MONGODB_URI=mongodb://localhost:27017/
-DB_NAME=myDatabase
-SECRET=cheese
-```
+The app is deployed via Heroku. 
 
-## Commands
 
-`npm run dev` run dev server
-
-`npm run start` run in production more
-
-- For production you should add a store property to sessions that'll store the session in redis or mongo. See the express-session documentation to learn more.
-
-- session auth built in, the user model is in **models/auth** and the auth routes are in **controllers/auth**
-
-- If you want the connect.session() warning to go away you can configure a mongo session store using the following library => https://www.npmjs.com/package/connect-mongo
-
-MAKE SURE TO JOIN THE SLACK AND DISCORD COMMUNITIES AT DEVNURSERY.COM
