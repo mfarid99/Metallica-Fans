@@ -93,7 +93,7 @@ a:hover {
     height: 500px;
 }
 
-.imgshowWide{
+.imgshowWide {
     width: 1600px;
     height: 1000px;
 
@@ -102,3 +102,41 @@ a:hover {
 .createMemory{
     background-color: rgb(255, 39, 1);
 }
+
+.hetfieldsignup {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+  
+  .signuptxt {
+    position: absolute;
+    bottom: 400px;
+    left: 1100px;
+  }
+
+  .hetfieldscreamtxt {
+      font-size: 700%;
+      color: rgb(254, 254, 254);
+      text-shadow: 4px 4px #fc0b0b;
+
+  }
+
+  .hetfieldscreamtxt:hover {
+    color: rgb(21, 0, 255);
+    text-shadow: 4px 4px #fc0b0b;
+  }
+
+  .loginpgtxt {
+    font-size: 700%;
+    color: rgb(254, 254, 254);
+    text-shadow: 4px 4px #fc0b0b;
+
+  }
+
+  .loginpgtxt:hover {
+    color: rgb(21, 0, 255);
+    text-shadow: 4px 4px #fc0b0b;
+  }
+
+  
